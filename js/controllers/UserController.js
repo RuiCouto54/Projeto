@@ -14,7 +14,7 @@ export default class UserController {
     }
 
     getAll() {
-        this.userModel.getAll();
+        return this.userModel.getAll();
     }
 
     getAllData() {
