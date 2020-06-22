@@ -9,16 +9,19 @@ export default class ClassificationView {
         this.classificationTable = document.querySelector("#classificationTable tbody")
         this.imgNav = document.querySelector("#imgNav")
 
-        this.sort()
         this.renderTable(this.userController.getAllData())
         this.fillUserData()
     }
 
     renderTable(usersData = []) {
+
+        const sortedArray = usersData.sort((elem1, elem2) => {
+            return elem2.points - elem1.points
+        })
         
         let result = ''
         let cont = 1;
-        for (let user of usersData) {
+        for (let user of sortedArray) {
             result += `<tr>
             <td>${cont}º lugar</td>
             <td>${user.name}</td>
@@ -34,9 +37,5 @@ export default class ClassificationView {
     fillUserData() {
         const currentUser = this.userController.getCurrentUser()
         this.imgNav.src = currentUser.img
-    }
-
-    sort() {
-        this.userController.sort()
     }
 }

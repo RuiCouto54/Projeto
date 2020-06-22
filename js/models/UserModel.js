@@ -94,13 +94,13 @@ export default class UserModel {
         localStorage.setItem('usersData' , JSON.stringify(this.usersData));
     }
 
-    _compare(userA, userB) {
-        if (userA.points < userB.points)
-            return -1;
-        if (userA.points > userB.points)
-            return 1;
-        return 0;
-    }
+    // _compare(userA, userB) {
+    //     if (userA.points < userB.points)
+    //         return -1;
+    //     if (userA.points > userB.points)
+    //         return 1;
+    //     return 0;
+    // }
 
     
 }
